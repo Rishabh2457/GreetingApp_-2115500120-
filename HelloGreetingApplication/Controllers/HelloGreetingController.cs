@@ -164,6 +164,28 @@ namespace HelloGreetingApplication.Controllers
             };
             return Ok(response);
         }
+
+        /// <summary>
+        /// Get method for greeting from service with optional user details
+        /// </summary>
+        /// <param name="firstName"></param>
+        /// <param name="lastName"></param>
+        /// <returns></returns>
+
+        [HttpGet("GreetingMessageUser")]
+        
+        public IActionResult GetGreetingMessageUser(string? firstName = null,string? lastName =null)
+        {
+            string result = _greetingBL.GetGreetingMessageUser(firstName,lastName);
+            var response = new ResponseModel<string>
+            {
+                Success = true,
+                Message = $"Got greetings msg generated successfully",
+                Data = result
+            };
+            return Ok(response);
+
+        }
         
     }
 }

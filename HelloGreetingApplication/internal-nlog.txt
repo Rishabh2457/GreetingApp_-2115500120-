@@ -49,3 +49,12 @@
 2025-03-04 16:58:50.6658 Info Shutdown() called. Logger closing...
 2025-03-04 16:58:50.9654 Info Closing old configuration.
 2025-03-04 16:58:50.9766 Info Logger has been closed down.
+2025-03-04 21:01:01.7859 Info Registered target NLog.Targets.FileTarget(Name=file)
+2025-03-04 21:01:01.7998 Info Registered target NLog.Targets.ConsoleTarget(Name=console)
+2025-03-04 21:01:01.8127 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.4.0.3182. Product version: 5.4.0+4d45d445601312040107cbe2ac00e56c4bf4a60b. GlobalAssemblyCache: False
+2025-03-04 21:01:01.8440 Info Validating config: TargetNames=file, console, ConfigItems=22, FilePath=E:\GreetingCLone\GreetingApp_-2115500120-\HelloGreetingApplication\bin\Debug\net6.0\nlog.config
+2025-03-04 21:01:01.8645 Info Configuration initialized.
+2025-03-04 21:01:02.3298 Info Validating config: TargetNames=file, console, ConfigItems=22, FilePath=E:\GreetingCLone\GreetingApp_-2115500120-\HelloGreetingApplication\bin\Debug\net6.0\nlog.config
+2025-03-04 21:03:40.2011 Info Shutdown() called. Logger closing...
+2025-03-04 21:03:40.5508 Info Closing old configuration.
+2025-03-04 21:03:40.5622 Info Logger has been closed down.

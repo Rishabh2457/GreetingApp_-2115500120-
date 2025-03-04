@@ -16,5 +16,22 @@ namespace BusinessLayer.Service
         {
             return "Hello World! from business layer";
         }
+
+        public string GetGreetingMessageUser(string? firstName, string? lastName)
+        {
+            if (!string.IsNullOrEmpty(firstName) && !string.IsNullOrEmpty(lastName))
+            {
+                return $"Hello from, {firstName} {lastName}!";
+            }
+            if (!string.IsNullOrEmpty(firstName))
+            {
+                return $"Hello from, {firstName}!";
+            }
+            if (!string.IsNullOrEmpty(lastName))
+            {
+                return $"Hello from, {lastName}!";
+            }
+            return "Hello, World!";
+        }
     }
 }
