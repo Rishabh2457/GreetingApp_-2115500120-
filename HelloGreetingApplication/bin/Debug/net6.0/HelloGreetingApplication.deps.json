@@ -149,6 +149,8 @@
       "System.Runtime.CompilerServices.Unsafe/6.0.0": {},
       "BusinessLayer/1.0.0": {
         "dependencies": {
+          "NLog": "5.4.0",
+          "NLog.Web.AspNetCore": "5.4.0",
           "RepositoryLayer": "1.0.0"
         },
         "runtime": {

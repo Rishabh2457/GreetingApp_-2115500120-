@@ -1,5 +1,8 @@
+using System.Reflection.Metadata.Ecma335;
+using BusinessLayer.Interface;
 using Microsoft.AspNetCore.Mvc;
 using ModelLayer.Model;
+using NLog;
 
 namespace HelloGreetingApplication.Controllers
 {
@@ -11,6 +14,20 @@ namespace HelloGreetingApplication.Controllers
     [Route("[controller]")]
     public class HelloGreetingController : ControllerBase
     {
+
+        private readonly IGreetingBL _greetingBL;
+        private static readonly Logger logger = LogManager.GetCurrentClassLogger();
+
+
+        public HelloGreetingController(IGreetingBL greetingBL)
+        {
+            _greetingBL = greetingBL;
+
+        }
+        
+
+
+
         private static Dictionary<string, string> keyValueStore = new Dictionary<string, string>();
 
         /// <summary>
@@ -20,11 +37,12 @@ namespace HelloGreetingApplication.Controllers
         [HttpGet]
         public IActionResult Get() 
         {
+
             ResponseModel<string> responseModel = new ResponseModel<string>();
 
             responseModel.Message = "Hello to Greeting App API endpoint Hit";
             responseModel.Success = true;
-            responseModel.Data = "Hello, World!";
+            responseModel.Data = "Hello World!";
 
             return Ok(responseModel);
 
@@ -104,7 +122,11 @@ namespace HelloGreetingApplication.Controllers
                 Message = "Key not found"
             });
         }
-
+        /// <summary>
+        /// Delete the value by id 
+        /// </summary>
+        /// <param name="key"></param>
+        /// <returns></returns>
 
         [HttpDelete("{key}")]
         public IActionResult Delete(string key) 
@@ -124,8 +146,23 @@ namespace HelloGreetingApplication.Controllers
                 Success = false,
                 Message = "Key not found"
             });
+        }
 
-
+        /// <summary>
+        /// Get method for greeting from service
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet("GreetingMessage")]
+        public IActionResult GetGreetingMessage()
+        {
+            string result = _greetingBL.GetGreetingMessage();
+            var response = new ResponseModel<string>
+            {
+                Success = true,
+                Message = $"GOt greeting message form business layer{result}",
+                Data= result
+            };
+            return Ok(response);
         }
         
     }

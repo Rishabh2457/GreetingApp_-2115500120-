@@ -1,7 +1,8 @@
 using NLog;
 using NLog.Web;
-
-
+//using HelloGreetingApplication.Service;
+using BusinessLayer.Interface;
+using BusinessLayer.Service;
 
 
 var logger = LogManager.Setup().LoadConfigurationFromAppSettings().GetCurrentClassLogger();
@@ -21,8 +22,8 @@ try
     // Add Swagger
     builder.Services.AddEndpointsApiExplorer();
     builder.Services.AddSwaggerGen();
+    builder.Services.AddScoped<IGreetingBL, GreetingBL>();
 
-   
     var app = builder.Build();
 
     // Middleware

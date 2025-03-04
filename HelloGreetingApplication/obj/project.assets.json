@@ -321,6 +321,8 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
+          "NLog": "5.4.0",
+          "NLog.Web.AspNetCore": "5.4.0",
           "RepositoryLayer": "1.0.0"
         },
         "compile": {
@@ -1051,11 +1053,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\HelloGreetingApplication\\HelloGreetingApplication\\HelloGreetingApplication.csproj",
+      "projectUniqueName": "E:\\GreetingCLone\\GreetingApp_-2115500120-\\HelloGreetingApplication\\HelloGreetingApplication.csproj",
       "projectName": "HelloGreetingApplication",
-      "projectPath": "E:\\HelloGreetingApplication\\HelloGreetingApplication\\HelloGreetingApplication.csproj",
+      "projectPath": "E:\\GreetingCLone\\GreetingApp_-2115500120-\\HelloGreetingApplication\\HelloGreetingApplication.csproj",
       "packagesPath": "C:\\Users\\Rishabh kushwah\\.nuget\\packages\\",
-      "outputPath": "E:\\HelloGreetingApplication\\HelloGreetingApplication\\obj\\",
+      "outputPath": "E:\\GreetingCLone\\GreetingApp_-2115500120-\\HelloGreetingApplication\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -1077,8 +1079,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "E:\\HelloGreetingApplication\\BusinessLayer\\BusinessLayer.csproj": {
-              "projectPath": "E:\\HelloGreetingApplication\\BusinessLayer\\BusinessLayer.csproj"
+            "E:\\GreetingCLone\\GreetingApp_-2115500120-\\BusinessLayer\\BusinessLayer.csproj": {
+              "projectPath": "E:\\GreetingCLone\\GreetingApp_-2115500120-\\BusinessLayer\\BusinessLayer.csproj"
             }
           }
         }

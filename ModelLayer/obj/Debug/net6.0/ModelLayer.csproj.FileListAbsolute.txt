@@ -9,3 +9,15 @@ E:\HelloGreetingApplication\ModelLayer\obj\Debug\net6.0\ModelLayer.dll
 E:\HelloGreetingApplication\ModelLayer\obj\Debug\net6.0\refint\ModelLayer.dll
 E:\HelloGreetingApplication\ModelLayer\obj\Debug\net6.0\ModelLayer.pdb
 E:\HelloGreetingApplication\ModelLayer\obj\Debug\net6.0\ref\ModelLayer.dll
+E:\GreetingCLone\GreetingApp_-2115500120-\ModelLayer\bin\Debug\net6.0\ModelLayer.deps.json
+E:\GreetingCLone\GreetingApp_-2115500120-\ModelLayer\bin\Debug\net6.0\ModelLayer.dll
+E:\GreetingCLone\GreetingApp_-2115500120-\ModelLayer\bin\Debug\net6.0\ModelLayer.pdb
+E:\GreetingCLone\GreetingApp_-2115500120-\ModelLayer\obj\Debug\net6.0\ModelLayer.GeneratedMSBuildEditorConfig.editorconfig
+E:\GreetingCLone\GreetingApp_-2115500120-\ModelLayer\obj\Debug\net6.0\ModelLayer.AssemblyInfoInputs.cache
+E:\GreetingCLone\GreetingApp_-2115500120-\ModelLayer\obj\Debug\net6.0\ModelLayer.AssemblyInfo.cs
+E:\GreetingCLone\GreetingApp_-2115500120-\ModelLayer\obj\Debug\net6.0\ModelLayer.csproj.CoreCompileInputs.cache
+E:\GreetingCLone\GreetingApp_-2115500120-\ModelLayer\obj\Debug\net6.0\ModelLayer.sourcelink.json
+E:\GreetingCLone\GreetingApp_-2115500120-\ModelLayer\obj\Debug\net6.0\ModelLayer.dll
+E:\GreetingCLone\GreetingApp_-2115500120-\ModelLayer\obj\Debug\net6.0\refint\ModelLayer.dll
+E:\GreetingCLone\GreetingApp_-2115500120-\ModelLayer\obj\Debug\net6.0\ModelLayer.pdb
+E:\GreetingCLone\GreetingApp_-2115500120-\ModelLayer\obj\Debug\net6.0\ref\ModelLayer.dll
