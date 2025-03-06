@@ -261,7 +261,7 @@ namespace HelloGreetingApplication.Controllers
         }
 
         /// <summary>
-        /// Update the grw
+        /// Update by id 
         /// </summary>
         /// <param name="id"></param>
         /// <param name="request"></param>
