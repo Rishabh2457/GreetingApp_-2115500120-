@@ -18,11 +18,10 @@ namespace BusinessLayer.Interface
 
         List<GetGreetingMessage> GetAllGreetings();
 
-<<<<<<< HEAD
-       
-=======
         bool UpdateGreetingMessage(int id, string newMessage);
->>>>>>> UC7
+        bool DeleteGreetingById(int id);
+
+
 
 
 

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using BusinessLayer.Interface;
+using Microsoft.EntityFrameworkCore;
 using ModelLayer.Model;
 using NLog;
 using RepositoryLayer.Interface;
@@ -57,15 +58,16 @@ namespace BusinessLayer.Service
             return _greetingRL.GetAllGreetings();
         }
 
-<<<<<<< HEAD
-        
-=======
         public bool UpdateGreetingMessage(int id, string newMessage)
         {
             return _greetingRL.UpdateGreetingMessage(id, newMessage);
         }
 
->>>>>>> UC7
+        public bool DeleteGreetingById(int id)
+        {
+            return _greetingRL.DeleteGreetingById(id);
+        }
+
 
     }
 }

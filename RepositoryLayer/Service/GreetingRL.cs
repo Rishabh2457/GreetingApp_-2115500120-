@@ -25,8 +25,6 @@ public class GreetingRL : IGreetingRL
         return _context.GetGreetingMessages.ToList();
     }
 
-<<<<<<< HEAD
-=======
     public bool UpdateGreetingMessage(int id, string newMessage)
     {
         var greeting = _context.GetGreetingMessages.FirstOrDefault(g => g.Id == id);
@@ -40,7 +38,23 @@ public class GreetingRL : IGreetingRL
 
         return false;
     }
->>>>>>> UC7
+
+    public bool DeleteGreetingById(int id)
+    {
+        var greeting = _context.GetGreetingMessages.FirstOrDefault(g => g.Id == id);
+
+        if (greeting != null)
+        {
+            _context.GetGreetingMessages.Remove(greeting);
+            _context.SaveChanges();
+            return true;
+        }
+
+        return false;
+    }
+
+
+
 
 
 
