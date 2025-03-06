@@ -16,5 +16,11 @@ namespace BusinessLayer.Interface
 
         GetGreetingMessage GetGreetingById(int id);
 
+        List<GetGreetingMessage> GetAllGreetings();
+
+       
+
+
+
     }
 }

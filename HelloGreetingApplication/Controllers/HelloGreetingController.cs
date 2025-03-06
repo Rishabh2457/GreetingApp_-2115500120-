@@ -233,6 +233,36 @@ namespace HelloGreetingApplication.Controllers
                 Data = greeting
             });
         }
+        /// <summary>
+        /// Showing All Greeting message
+        /// </summary>
+        /// <returns></returns>
+
+        [HttpGet("GetAllGreetings")]
+        public IActionResult GetAllGreetings()
+        {
+            var result = _greetingBL.GetAllGreetings();
+
+            if (result == null || result.Count == 0)
+            {
+                return NotFound(new ResponseModel<string>
+                {
+                    Success = false,
+                    Message = "No greeting messages found"
+                });
+            }
+
+            return Ok(new ResponseModel<List<GetGreetingMessage>>
+            {
+                Success = true,
+                Message = "Greeting messages retrieved successfully",
+                Data = result
+            });
+        }
+
+        
+
+
 
 
 

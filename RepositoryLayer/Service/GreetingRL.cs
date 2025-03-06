@@ -20,5 +20,12 @@ public class GreetingRL : IGreetingRL
         return _context.GetGreetingMessages.FirstOrDefault(g => g.Id == id);
     }
 
+    public List<GetGreetingMessage> GetAllGreetings()
+    {
+        return _context.GetGreetingMessages.ToList();
+    }
+
+
+
 
 }
