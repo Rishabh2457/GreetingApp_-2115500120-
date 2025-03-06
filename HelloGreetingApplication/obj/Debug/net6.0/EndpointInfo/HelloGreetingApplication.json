@@ -165,11 +165,59 @@
           }
         }
       }
+    },
+    "/HelloGreeting/SaveGreeting": {
+      "post": {
+        "tags": [
+          "HelloGreeting"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GetGreetingMessage"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GetGreetingMessage"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/GetGreetingMessage"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
     }
   },
   "components": {
     "schemas": {
+      "GetGreetingMessage": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "message": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
       "RequestModel": {
+        "required": [
+          "value"
+        ],
         "type": "object",
         "properties": {
           "key": {
@@ -177,8 +225,8 @@
             "nullable": true
           },
           "value": {
-            "type": "string",
-            "nullable": true
+            "minLength": 1,
+            "type": "string"
           }
         },
         "additionalProperties": false

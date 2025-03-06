@@ -1,9 +1,10 @@
-using NLog;
+﻿using NLog;
 using NLog.Web;
-//using HelloGreetingApplication.Service;
 using BusinessLayer.Interface;
 using BusinessLayer.Service;
-
+using RepositoryLayer.Interface;
+using Microsoft.EntityFrameworkCore;
+using ModelLayer.Model;
 
 var logger = LogManager.Setup().LoadConfigurationFromAppSettings().GetCurrentClassLogger();
 logger.Info("Application Starting...");
@@ -22,11 +23,18 @@ try
     // Add Swagger
     builder.Services.AddEndpointsApiExplorer();
     builder.Services.AddSwaggerGen();
+
+    // 🔹 Register Repository and Business Layer
+    builder.Services.AddScoped<IGreetingRL, GreetingRL>();  
     builder.Services.AddScoped<IGreetingBL, GreetingBL>();
+
+    // 🔹 Database connection
+    var connectionString = builder.Configuration.GetConnectionString("SqlConnection");
+    builder.Services.AddDbContext<HelloGreetingDbContext>(options => options.UseSqlServer(connectionString));
 
     var app = builder.Build();
 
-    // Middleware
+    // 🔹 Middleware
     if (app.Environment.IsDevelopment())
     {
         app.UseSwagger();

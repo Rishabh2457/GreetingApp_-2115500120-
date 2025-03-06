@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace RepositoryLayer.Interface
 {
-    public class IGreetingRL
+    public interface IGreetingRL
     {
+        public void SaveGreetingMessage(string message);
+
+
     }
 }

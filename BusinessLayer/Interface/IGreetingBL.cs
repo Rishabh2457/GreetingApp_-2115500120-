@@ -11,5 +11,6 @@ namespace BusinessLayer.Interface
     {
         public string GetGreetingMessage();
         public string GetGreetingMessageUser(string? firstName, string? lastName);
+        void SaveGreetingMessage(string value);
     }
 }

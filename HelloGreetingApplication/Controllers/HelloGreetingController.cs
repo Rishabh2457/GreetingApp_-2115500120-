@@ -186,6 +186,27 @@ namespace HelloGreetingApplication.Controllers
             return Ok(response);
 
         }
-        
+
+        /// <summary>
+        /// Save the greeting method in the database
+        /// </summary>
+        /// <param name="requestModel"></param>
+        /// <returns></returns>
+
+        [HttpPost("SaveGreeting")]
+        public IActionResult SaveGreetingMessage([FromBody] GetGreetingMessage getGreetingMessage)
+        {
+            _greetingBL.SaveGreetingMessage(getGreetingMessage.Message);
+
+            return Ok(new ResponseModel<string>
+            {
+                Success = true,
+                Message = "Greeting message saved successfully",
+                Data = getGreetingMessage.Message
+            });
+        }
+
+
+
     }
 }

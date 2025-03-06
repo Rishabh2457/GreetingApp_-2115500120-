@@ -5,12 +5,19 @@ using System.Text;
 using System.Threading.Tasks;
 using BusinessLayer.Interface;
 using NLog;
+using RepositoryLayer.Interface;
 
 namespace BusinessLayer.Service
 {
     public class GreetingBL : IGreetingBL
     {
         private static readonly Logger logger = LogManager.GetCurrentClassLogger();
+        private readonly IGreetingRL _greetingRL;
+
+        public GreetingBL(IGreetingRL greetingRL)
+        {
+            _greetingRL = greetingRL;
+        }
 
         public string GetGreetingMessage()
         {
@@ -32,6 +39,11 @@ namespace BusinessLayer.Service
                 return $"Hello from, {lastName}!";
             }
             return "Hello, World!";
+        }
+
+        public void SaveGreetingMessage(string message)
+        {
+            _greetingRL.SaveGreetingMessage(message);
         }
     }
 }
