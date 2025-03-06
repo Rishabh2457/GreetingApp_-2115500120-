@@ -260,7 +260,35 @@ namespace HelloGreetingApplication.Controllers
             });
         }
 
-        
+        /// <summary>
+        /// Update by id 
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="request"></param>
+        /// <returns></returns>
+
+
+        [HttpPut("UpdateGreeting/{id}")]
+        public IActionResult UpdateGreeting(int id, [FromBody] GetGreetingMessage request)
+        {
+            bool isUpdated = _greetingBL.UpdateGreetingMessage(id, request.Message);
+
+            if (!isUpdated)
+            {
+                return NotFound(new ResponseModel<string>
+                {
+                    Success = false,
+                    Message = "Greeting message not found"
+                });
+            }
+
+            return Ok(new ResponseModel<string>
+            {
+                Success = true,
+                Message = "Greeting message updated successfully",
+                Data = request.Message
+            });
+        }
 
 
 

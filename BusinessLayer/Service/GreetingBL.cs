@@ -57,7 +57,15 @@ namespace BusinessLayer.Service
             return _greetingRL.GetAllGreetings();
         }
 
+<<<<<<< HEAD
         
+=======
+        public bool UpdateGreetingMessage(int id, string newMessage)
+        {
+            return _greetingRL.UpdateGreetingMessage(id, newMessage);
+        }
+
+>>>>>>> UC7
 
     }
 }

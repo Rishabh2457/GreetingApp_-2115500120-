@@ -25,6 +25,22 @@ public class GreetingRL : IGreetingRL
         return _context.GetGreetingMessages.ToList();
     }
 
+<<<<<<< HEAD
+=======
+    public bool UpdateGreetingMessage(int id, string newMessage)
+    {
+        var greeting = _context.GetGreetingMessages.FirstOrDefault(g => g.Id == id);
+
+        if (greeting != null)
+        {
+            greeting.Message = newMessage;
+            _context.SaveChanges();
+            return true;
+        }
+
+        return false;
+    }
+>>>>>>> UC7
 
 
 
