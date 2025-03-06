@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using BusinessLayer.Interface;
+using ModelLayer.Model;
 using NLog;
 using RepositoryLayer.Interface;
 
@@ -45,5 +46,11 @@ namespace BusinessLayer.Service
         {
             _greetingRL.SaveGreetingMessage(message);
         }
+
+        public GetGreetingMessage GetGreetingById(int id)
+        {
+            return _greetingRL.GetGreetingById(id);
+        }
+
     }
 }

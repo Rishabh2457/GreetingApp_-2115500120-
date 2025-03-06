@@ -15,4 +15,10 @@ public class GreetingRL : IGreetingRL
         _context.GetGreetingMessages.Add(greeting);
         _context.SaveChanges();
     }
+    public GetGreetingMessage GetGreetingById(int id)
+    {
+        return _context.GetGreetingMessages.FirstOrDefault(g => g.Id == id);
+    }
+
+
 }
