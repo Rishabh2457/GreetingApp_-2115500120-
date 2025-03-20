@@ -5,6 +5,7 @@ using BusinessLayer.Service;
 using RepositoryLayer.Interface;
 using Microsoft.EntityFrameworkCore;
 using ModelLayer.Model;
+using StackExchange.Redis;
 
 var logger = LogManager.Setup().LoadConfigurationFromAppSettings().GetCurrentClassLogger();
 logger.Info("Application Starting...");
@@ -16,6 +17,10 @@ try
     // Configure NLog
     builder.Logging.ClearProviders();
     builder.Host.UseNLog();
+
+    // Configure Redis Connection
+    builder.Services.AddSingleton<IConnectionMultiplexer>(ConnectionMultiplexer.Connect("localhost:6379"));
+    builder.Services.AddSingleton<RedisCacheService>();
 
     // Add controllers
     builder.Services.AddControllers();

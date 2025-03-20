@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using ModelLayer.Model;
 using NLog;
 
+
 namespace HelloGreetingApplication.Controllers
 {
 
@@ -17,12 +18,12 @@ namespace HelloGreetingApplication.Controllers
 
         private readonly IGreetingBL _greetingBL;
         private static readonly Logger logger = LogManager.GetCurrentClassLogger();
+        private readonly RedisCacheService _cacheService;
 
 
         public HelloGreetingController(IGreetingBL greetingBL)
         {
             _greetingBL = greetingBL;
-
         }
         
 
@@ -187,62 +188,155 @@ namespace HelloGreetingApplication.Controllers
 
         }
 
+        ///// <summary>
+        ///// Save the greeting method in the database
+        ///// </summary>
+        ///// <param name="requestModel"></param>
+        ///// <returns></returns>
+
+        //[HttpPost("SaveGreeting")]
+        //public IActionResult SaveGreetingMessage([FromBody] GetGreetingMessage getGreetingMessage)
+        //{
+        //    _greetingBL.SaveGreetingMessage(getGreetingMessage.Message);
+
+        //    return Ok(new ResponseModel<string>
+        //    {
+        //        Success = true,
+        //        Message = "Greeting message saved successfully",
+        //        Data = getGreetingMessage.Message
+        //    });
+        //}
+
+
+        ///// <summary>
+        ///// Get a greeting message by ID
+        ///// </summary>
+        ///// <param name="id"></param>
+        ///// <returns></returns>
+        //[HttpGet("GetGreetingById/{id}")]
+        //public IActionResult GetGreetingById(int id)
+        //{
+        //    var greeting = _greetingBL.GetGreetingById(id);
+
+        //    if (greeting == null)
+        //    {
+        //        return NotFound(new ResponseModel<string>
+        //        {
+        //            Success = false,
+        //            Message = "Greeting message not found"
+        //        });
+        //    }
+
+        //    return Ok(new ResponseModel<GetGreetingMessage>
+        //    {
+        //        Success = true,
+        //        Message = "Greeting message retrieved successfully",
+        //        Data = greeting
+        //    });
+        //}
+        ///// <summary>
+        ///// Showing All Greeting message
+        ///// </summary>
+        ///// <returns></returns>
+
+        //[HttpGet("GetAllGreetings")]
+        //public IActionResult GetAllGreetings()
+        //{
+        //    var result = _greetingBL.GetAllGreetings();
+
+        //    if (result == null || result.Count == 0)
+        //    {
+        //        return NotFound(new ResponseModel<string>
+        //        {
+        //            Success = false,
+        //            Message = "No greeting messages found"
+        //        });
+        //    }
+
+        //    return Ok(new ResponseModel<List<GetGreetingMessage>>
+        //    {
+        //        Success = true,
+        //        Message = "Greeting messages retrieved successfully",
+        //        Data = result
+        //    });
+        //}
+
+        ///// <summary>
+        ///// Update by id 
+        ///// </summary>
+        ///// <param name="id"></param>
+        ///// <param name="request"></param>
+        ///// <returns></returns>
+
+
+        //[HttpPut("UpdateGreeting/{id}")]
+        //public IActionResult UpdateGreeting(int id, [FromBody] GetGreetingMessage request)
+        //{
+        //    bool isUpdated = _greetingBL.UpdateGreetingMessage(id, request.Message);
+
+        //    if (!isUpdated)
+        //    {
+        //        return NotFound(new ResponseModel<string>
+        //        {
+        //            Success = false,
+        //            Message = "Greeting message not found"
+        //        });
+        //    }
+
+        //    return Ok(new ResponseModel<string>
+        //    {
+        //        Success = true,
+        //        Message = "Greeting message updated successfully",
+        //        Data = request.Message
+        //    });
+        //}
+
+        ///// <summary>
+        ///// Delete greeting msg by id
+        ///// </summary>
+        ///// <param name="id"></param>
+        ///// <returns></returns>
+
+        //[HttpDelete("DeleteGreeting/{id}")]
+        //public IActionResult DeleteGreeting(int id)
+        //{
+        //    bool isDeleted = _greetingBL.DeleteGreetingById(id);
+
+        //    if (!isDeleted)
+        //    {
+        //        return NotFound(new ResponseModel<string>
+        //        {
+        //            Success = false,
+        //            Message = "Greeting message not found"
+        //        });
+        //    }
+
+        //    return Ok(new ResponseModel<string>
+        //    {
+        //        Success = true,
+        //        Message = "Greeting message deleted successfully"
+        //    });
+        //}
         /// <summary>
-        /// Save the greeting method in the database
+        /// Get all greeting messages (Uses caching)
         /// </summary>
-        /// <param name="requestModel"></param>
-        /// <returns></returns>
-
-        [HttpPost("SaveGreeting")]
-        public IActionResult SaveGreetingMessage([FromBody] GetGreetingMessage getGreetingMessage)
+        [HttpGet("GetAllGreetings")]
+        public async Task<IActionResult> GetAllGreetings()
         {
-            _greetingBL.SaveGreetingMessage(getGreetingMessage.Message);
+            string cacheKey = "all_greetings";
+            var cachedData = await _cacheService.GetAsync<List<GetGreetingMessage>>(cacheKey);
 
-            return Ok(new ResponseModel<string>
+            if (cachedData != null)
             {
-                Success = true,
-                Message = "Greeting message saved successfully",
-                Data = getGreetingMessage.Message
-            });
-        }
-
-
-        /// <summary>
-        /// Get a greeting message by ID
-        /// </summary>
-        /// <param name="id"></param>
-        /// <returns></returns>
-        [HttpGet("GetGreetingById/{id}")]
-        public IActionResult GetGreetingById(int id)
-        {
-            var greeting = _greetingBL.GetGreetingById(id);
-
-            if (greeting == null)
-            {
-                return NotFound(new ResponseModel<string>
+                return Ok(new ResponseModel<List<GetGreetingMessage>>
                 {
-                    Success = false,
-                    Message = "Greeting message not found"
+                    Success = true,
+                    Message = "Retrieved from cache",
+                    Data = cachedData
                 });
             }
 
-            return Ok(new ResponseModel<GetGreetingMessage>
-            {
-                Success = true,
-                Message = "Greeting message retrieved successfully",
-                Data = greeting
-            });
-        }
-        /// <summary>
-        /// Showing All Greeting message
-        /// </summary>
-        /// <returns></returns>
-
-        [HttpGet("GetAllGreetings")]
-        public IActionResult GetAllGreetings()
-        {
-            var result = _greetingBL.GetAllGreetings();
-
+            var result = await _greetingBL.GetAllGreetings().ConfigureAwait(false);
             if (result == null || result.Count == 0)
             {
                 return NotFound(new ResponseModel<string>
@@ -252,6 +346,8 @@ namespace HelloGreetingApplication.Controllers
                 });
             }
 
+            await _cacheService.SetAsync(cacheKey, result, TimeSpan.FromMinutes(10));
+
             return Ok(new ResponseModel<List<GetGreetingMessage>>
             {
                 Success = true,
@@ -260,20 +356,28 @@ namespace HelloGreetingApplication.Controllers
             });
         }
 
+
         /// <summary>
-        /// Update by id 
+        /// Get a greeting message by ID (Uses caching)
         /// </summary>
-        /// <param name="id"></param>
-        /// <param name="request"></param>
-        /// <returns></returns>
-
-
-        [HttpPut("UpdateGreeting/{id}")]
-        public IActionResult UpdateGreeting(int id, [FromBody] GetGreetingMessage request)
+        [HttpGet("GetGreetingById/{id}")]
+        public async Task<IActionResult> GetGreetingById(int id)
         {
-            bool isUpdated = _greetingBL.UpdateGreetingMessage(id, request.Message);
+            string cacheKey = $"greeting_{id}";
+            var cachedData = await _cacheService.GetAsync<GetGreetingMessage>(cacheKey);
 
-            if (!isUpdated)
+            if (cachedData != null)
+            {
+                return Ok(new ResponseModel<GetGreetingMessage>
+                {
+                    Success = true,
+                    Message = "Greeting retrieved from cache",
+                    Data = cachedData
+                });
+            }
+
+            var result = await _greetingBL.GetGreetingById(id).ConfigureAwait(false);
+            if (result == null)
             {
                 return NotFound(new ResponseModel<string>
                 {
@@ -282,24 +386,67 @@ namespace HelloGreetingApplication.Controllers
                 });
             }
 
+            await _cacheService.SetAsync(cacheKey, result, TimeSpan.FromMinutes(10));
+
+            return Ok(new ResponseModel<GetGreetingMessage>
+            {
+                Success = true,
+                Message = "Greeting retrieved successfully",
+                Data = result
+            });
+        }
+
+        /// <summary>
+        /// Save a new greeting message (Clears cache after saving)
+        /// </summary>
+        [HttpPost("SaveGreeting")]
+        public async Task<IActionResult> SaveGreetingMessage([FromBody] GetGreetingMessage request)
+        {
+            _greetingBL.SaveGreetingMessage(request.Message);
+            await _cacheService.RemoveAsync("all_greetings");
+
             return Ok(new ResponseModel<string>
             {
                 Success = true,
-                Message = "Greeting message updated successfully",
+                Message = "Greeting message saved successfully",
                 Data = request.Message
             });
         }
 
         /// <summary>
-        /// Delete greeting msg by id
+        /// Update an existing greeting message by ID (Clears cache after update)
         /// </summary>
-        /// <param name="id"></param>
-        /// <returns></returns>
-
-        [HttpDelete("DeleteGreeting/{id}")]
-        public IActionResult DeleteGreeting(int id)
+        [HttpPut("UpdateGreeting/{id}")]
+        public async Task<IActionResult> UpdateGreeting(int id, [FromBody] string newMessage)
         {
-            bool isDeleted = _greetingBL.DeleteGreetingById(id);
+            bool isUpdated = await _greetingBL.UpdateGreetingMessage(id, newMessage);
+
+            if (!isUpdated)
+            {
+                return NotFound(new ResponseModel<string>
+                {
+                    Success = false,
+                    Message = "Greeting not found or update failed"
+                });
+            }
+
+            await _cacheService.RemoveAsync($"greeting_{id}");
+            await _cacheService.RemoveAsync("all_greetings");
+
+            return Ok(new ResponseModel<string>
+            {
+                Success = true,
+                Message = "Greeting updated successfully"
+            });
+        }
+
+        /// <summary>
+        /// Delete a greeting message by ID (Clears cache after deletion)
+        /// </summary>
+        [HttpDelete("DeleteGreeting/{id}")]
+        public async Task<IActionResult> DeleteGreeting(int id)
+        {
+            bool isDeleted = await _greetingBL.DeleteGreetingById(id).ConfigureAwait(false);
 
             if (!isDeleted)
             {
@@ -310,15 +457,15 @@ namespace HelloGreetingApplication.Controllers
                 });
             }
 
+            await _cacheService.RemoveAsync($"greeting_{id}");
+            await _cacheService.RemoveAsync("all_greetings");
+
             return Ok(new ResponseModel<string>
             {
                 Success = true,
                 Message = "Greeting message deleted successfully"
             });
         }
-
-
-
 
 
 

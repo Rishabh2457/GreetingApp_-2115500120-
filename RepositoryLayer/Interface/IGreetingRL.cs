@@ -11,14 +11,17 @@ namespace RepositoryLayer.Interface
     {
         public void SaveGreetingMessage(string message);
 
-        GetGreetingMessage GetGreetingById(int id);
+        //GetGreetingMessage GetGreetingById(int id);
 
-        List<GetGreetingMessage> GetAllGreetings();
+        //List<GetGreetingMessage> GetAllGreetings();
 
-        bool UpdateGreetingMessage(int id, string newMessage);
+        //bool UpdateGreetingMessage(int id, string newMessage);
 
-        bool DeleteGreetingById(int id);
+        //bool DeleteGreetingById(int id);
 
-
+        Task<List<GetGreetingMessage>> GetAllGreetings();
+        Task<GetGreetingMessage> GetGreetingById(int id);
+        Task<bool> UpdateGreetingMessage(int id, string newMessage);
+        Task<bool> DeleteGreetingById(int id);
     }
 }

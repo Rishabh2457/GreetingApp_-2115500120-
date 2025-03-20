@@ -169,3 +169,9 @@
 2025-03-06 23:17:01.9800 Info Validating config: TargetNames=file, console, ConfigItems=22, FilePath=E:\GreetingCLone\GreetingApp_-2115500120-\HelloGreetingApplication\bin\Debug\net6.0\nlog.config
 2025-03-06 23:17:02.0023 Info Configuration initialized.
 2025-03-06 23:17:02.6948 Info Validating config: TargetNames=file, console, ConfigItems=22, FilePath=E:\GreetingCLone\GreetingApp_-2115500120-\HelloGreetingApplication\bin\Debug\net6.0\nlog.config
+2025-03-20 11:58:54.3082 Info Registered target NLog.Targets.FileTarget(Name=file)
+2025-03-20 11:58:54.3202 Info Registered target NLog.Targets.ConsoleTarget(Name=console)
+2025-03-20 11:58:54.3483 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.4.0.3182. Product version: 5.4.0+4d45d445601312040107cbe2ac00e56c4bf4a60b. GlobalAssemblyCache: False
+2025-03-20 11:58:54.4018 Info Validating config: TargetNames=file, console, ConfigItems=22, FilePath=E:\GreetingCLone\GreetingApp_-2115500120-\HelloGreetingApplication\bin\Debug\net6.0\nlog.config
+2025-03-20 11:58:54.4360 Info Configuration initialized.
+2025-03-20 11:58:56.7680 Info Validating config: TargetNames=file, console, ConfigItems=22, FilePath=E:\GreetingCLone\GreetingApp_-2115500120-\HelloGreetingApplication\bin\Debug\net6.0\nlog.config

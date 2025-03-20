@@ -155,7 +155,7 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "getGreetingMessage",
+        "Name": "request",
         "Type": "ModelLayer.Model.GetGreetingMessage",
         "IsRequired": true
       }
@@ -176,8 +176,8 @@
         "IsRequired": true
       },
       {
-        "Name": "request",
-        "Type": "ModelLayer.Model.GetGreetingMessage",
+        "Name": "newMessage",
+        "Type": "System.String",
         "IsRequired": true
       }
     ],

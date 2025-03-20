@@ -1061,3 +1061,36 @@ SELECT @@ROWCOUNT;
 2025-03-06 23:17:45.4612 | INFO | Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker | Executed action HelloGreetingApplication.Controllers.HelloGreetingController.DeleteGreeting (HelloGreetingApplication) in 3737.0475ms 
 2025-03-06 23:17:45.4612 | INFO | Microsoft.AspNetCore.Routing.EndpointMiddleware | Executed endpoint 'HelloGreetingApplication.Controllers.HelloGreetingController.DeleteGreeting (HelloGreetingApplication)' 
 2025-03-06 23:17:45.4739 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request finished HTTP/2 DELETE https://localhost:7193/HelloGreeting/DeleteGreeting/1 - - - 200 - application/json;+charset=utf-8 3810.9443ms 
+2025-03-20 11:58:54.4775 | INFO | HelloGreetingApplication.Program | Application Starting... 
+2025-03-20 11:58:57.7545 | INFO | Microsoft.Hosting.Lifetime | Now listening on: https://localhost:7193 
+2025-03-20 11:58:57.7592 | INFO | Microsoft.Hosting.Lifetime | Now listening on: http://localhost:5161 
+2025-03-20 11:58:57.8700 | INFO | Microsoft.Hosting.Lifetime | Application started. Press Ctrl+C to shut down. 
+2025-03-20 11:58:57.8700 | INFO | Microsoft.Hosting.Lifetime | Hosting environment: Development 
+2025-03-20 11:58:57.8700 | INFO | Microsoft.Hosting.Lifetime | Content root path: E:\GreetingCLone\GreetingApp_-2115500120-\HelloGreetingApplication\ 
+2025-03-20 11:58:59.6440 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request starting HTTP/2 GET https://localhost:7193/swagger - - 
+2025-03-20 11:59:00.1921 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request finished HTTP/2 GET https://localhost:7193/swagger - - - 301 0 - 550.3718ms 
+2025-03-20 11:59:00.2230 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request starting HTTP/2 GET https://localhost:7193/swagger/index.html - - 
+2025-03-20 11:59:00.3966 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request finished HTTP/2 GET https://localhost:7193/swagger/index.html - - - 200 - text/html;charset=utf-8 174.4063ms 
+2025-03-20 11:59:00.4764 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request starting HTTP/2 GET https://localhost:7193/swagger/swagger-ui.css - - 
+2025-03-20 11:59:00.4764 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request starting HTTP/2 GET https://localhost:7193/swagger/index.css - - 
+2025-03-20 11:59:00.4869 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request starting HTTP/2 GET https://localhost:7193/swagger/swagger-ui-bundle.js - - 
+2025-03-20 11:59:00.4869 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request starting HTTP/2 GET https://localhost:7193/swagger/swagger-ui-standalone-preset.js - - 
+2025-03-20 11:59:00.4869 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request starting HTTP/2 GET https://localhost:7193/swagger/index.js - - 
+2025-03-20 11:59:00.4869 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request starting HTTP/2 GET https://localhost:7193/_framework/aspnetcore-browser-refresh.js - - 
+2025-03-20 11:59:00.4970 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request finished HTTP/2 GET https://localhost:7193/swagger/index.js - - - 200 - application/javascript;charset=utf-8 4.2957ms 
+2025-03-20 11:59:00.4970 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request finished HTTP/2 GET https://localhost:7193/_framework/aspnetcore-browser-refresh.js - - - 200 12380 application/javascript;+charset=utf-8 8.6831ms 
+2025-03-20 11:59:00.4970 | INFO | Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware | Sending file. Request path: '/index.css'. Physical path: 'N/A' 
+2025-03-20 11:59:00.5653 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request finished HTTP/2 GET https://localhost:7193/swagger/index.css - - - 200 202 text/css 84.3770ms 
+2025-03-20 11:59:00.5794 | INFO | Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware | Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A' 
+2025-03-20 11:59:00.5794 | INFO | Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware | Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A' 
+2025-03-20 11:59:00.5951 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request finished HTTP/2 GET https://localhost:7193/swagger/swagger-ui-standalone-preset.js - - - 200 229223 application/javascript 102.5904ms 
+2025-03-20 11:59:00.5951 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request finished HTTP/2 GET https://localhost:7193/swagger/swagger-ui.css - - - 200 154948 text/css 118.7210ms 
+2025-03-20 11:59:00.6447 | INFO | Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware | Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A' 
+2025-03-20 11:59:00.6447 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request finished HTTP/2 GET https://localhost:7193/swagger/swagger-ui-bundle.js - - - 200 1466324 application/javascript 153.1316ms 
+2025-03-20 11:59:00.9691 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request starting HTTP/2 GET https://localhost:7193/_vs/browserLink - - 
+2025-03-20 11:59:01.0894 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request finished HTTP/2 GET https://localhost:7193/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 120.4048ms 
+2025-03-20 11:59:02.5686 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request starting HTTP/2 GET https://localhost:7193/swagger/v1/swagger.json - - 
+2025-03-20 11:59:02.5686 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request finished HTTP/2 GET https://localhost:7193/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 11.7921ms 
+2025-03-20 11:59:02.6262 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request starting HTTP/2 GET https://localhost:7193/swagger/favicon-32x32.png - - 
+2025-03-20 11:59:02.6262 | INFO | Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware | Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A' 
+2025-03-20 11:59:02.6262 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request finished HTTP/2 GET https://localhost:7193/swagger/favicon-32x32.png - - - 200 628 image/png 2.0556ms 

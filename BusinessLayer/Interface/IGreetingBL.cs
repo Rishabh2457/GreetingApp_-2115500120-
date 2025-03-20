@@ -14,15 +14,17 @@ namespace BusinessLayer.Interface
         public string GetGreetingMessageUser(string? firstName, string? lastName);
         void SaveGreetingMessage(string value);
 
-        GetGreetingMessage GetGreetingById(int id);
+        //GetGreetingMessage GetGreetingById(int id);
 
-        List<GetGreetingMessage> GetAllGreetings();
+        //List<GetGreetingMessage> GetAllGreetings();
 
-<<<<<<< HEAD
-       
-=======
-        bool UpdateGreetingMessage(int id, string newMessage);
->>>>>>> UC7
+       // bool UpdateGreetingMessage(int id, string newMessage);
+       // bool DeleteGreetingById(int id);
+
+        Task<List<GetGreetingMessage>> GetAllGreetings();
+        Task<GetGreetingMessage> GetGreetingById(int id);
+        Task<bool> UpdateGreetingMessage(int id, string newMessage);
+        Task<bool> DeleteGreetingById(int id);
 
 
 
