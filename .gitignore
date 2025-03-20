@@ -1,4 +1,11 @@
-.vs/
-bin/
+# .gitignore me add karo
 obj/
+
+
+
+bin/
+*.cache
+*.dll
+*.exe
+.vs/
 
