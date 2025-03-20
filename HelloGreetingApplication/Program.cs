@@ -6,6 +6,9 @@ using RepositoryLayer.Interface;
 using Microsoft.EntityFrameworkCore;
 using ModelLayer.Model;
 using StackExchange.Redis;
+using BusinessLayer.Services;
+using RepositoryLayer.Services;
+using RepositoryLayer.Hashing;
 
 var logger = LogManager.Setup().LoadConfigurationFromAppSettings().GetCurrentClassLogger();
 logger.Info("Application Starting...");
@@ -14,28 +17,41 @@ try
 {
     var builder = WebApplication.CreateBuilder(args);
 
-    // Configure NLog
+    // 🔹 Configure NLog
     builder.Logging.ClearProviders();
     builder.Host.UseNLog();
 
-    // Configure Redis Connection
-    builder.Services.AddSingleton<IConnectionMultiplexer>(ConnectionMultiplexer.Connect("localhost:6379"));
-    builder.Services.AddSingleton<RedisCacheService>();
-
-    // Add controllers
+    // 🔹 Add Controllers & Swagger
     builder.Services.AddControllers();
-
-    // Add Swagger
     builder.Services.AddEndpointsApiExplorer();
     builder.Services.AddSwaggerGen();
 
     // 🔹 Register Repository and Business Layer
-    builder.Services.AddScoped<IGreetingRL, GreetingRL>();  
+    builder.Services.AddScoped<IGreetingRL, GreetingRL>();
     builder.Services.AddScoped<IGreetingBL, GreetingBL>();
+    builder.Services.AddScoped<IUserBL, UserBL>();
+    builder.Services.AddScoped<IUserRL, UserRL>();
+    builder.Services.AddScoped<Password_Hash>();
 
     // 🔹 Database connection
     var connectionString = builder.Configuration.GetConnectionString("SqlConnection");
     builder.Services.AddDbContext<HelloGreetingDbContext>(options => options.UseSqlServer(connectionString));
+
+    // 🔹 Configure Redis (remove duplicate registration)
+    builder.Services.AddSingleton<IConnectionMultiplexer>(sp =>
+    {
+        try
+        {
+            var redisConfig = builder.Configuration.GetSection("Redis")["ConnectionString"] ?? "localhost:6379";
+            return ConnectionMultiplexer.Connect(redisConfig);
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine("Redis connection failed: " + e.Message);
+            throw;
+        }
+    });
+    builder.Services.AddSingleton<RedisCacheService>();
 
     var app = builder.Build();
 
