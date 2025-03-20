@@ -1,5 +1,7 @@
-.vs/
-bin/
+# .gitignore me add karo
 obj/
-*.pdb
-
+bin/
+*.cache
+*.dll
+*.exe
+.vs/
