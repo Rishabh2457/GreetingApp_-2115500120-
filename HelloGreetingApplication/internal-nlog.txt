@@ -175,3 +175,152 @@
 2025-03-20 11:58:54.4018 Info Validating config: TargetNames=file, console, ConfigItems=22, FilePath=E:\GreetingCLone\GreetingApp_-2115500120-\HelloGreetingApplication\bin\Debug\net6.0\nlog.config
 2025-03-20 11:58:54.4360 Info Configuration initialized.
 2025-03-20 11:58:56.7680 Info Validating config: TargetNames=file, console, ConfigItems=22, FilePath=E:\GreetingCLone\GreetingApp_-2115500120-\HelloGreetingApplication\bin\Debug\net6.0\nlog.config
+2025-03-20 22:06:43.9627 Info Registered target NLog.Targets.FileTarget(Name=file)
+2025-03-20 22:06:43.9871 Info Registered target NLog.Targets.ConsoleTarget(Name=console)
+2025-03-20 22:06:43.9985 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.4.0.3182. Product version: 5.4.0+4d45d445601312040107cbe2ac00e56c4bf4a60b. GlobalAssemblyCache: False
+2025-03-20 22:06:44.0269 Info Validating config: TargetNames=file, console, ConfigItems=22, FilePath=E:\GreetingCLone\GreetingApp_-2115500120-\HelloGreetingApplication\bin\Debug\net6.0\nlog.config
+2025-03-20 22:06:44.0438 Info Configuration initialized.
+2025-03-20 22:06:45.3172 Info Validating config: TargetNames=file, console, ConfigItems=22, FilePath=E:\GreetingCLone\GreetingApp_-2115500120-\HelloGreetingApplication\bin\Debug\net6.0\nlog.config
+2025-03-20 22:09:57.6168 Info Registered target NLog.Targets.FileTarget(Name=file)
+2025-03-20 22:09:57.6299 Info Registered target NLog.Targets.ConsoleTarget(Name=console)
+2025-03-20 22:09:57.6529 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.4.0.3182. Product version: 5.4.0+4d45d445601312040107cbe2ac00e56c4bf4a60b. GlobalAssemblyCache: False
+2025-03-20 22:09:57.6682 Info Validating config: TargetNames=file, console, ConfigItems=22, FilePath=E:\GreetingCLone\GreetingApp_-2115500120-\HelloGreetingApplication\bin\Debug\net6.0\nlog.config
+2025-03-20 22:09:57.6807 Info Configuration initialized.
+2025-03-20 22:09:58.3183 Info Validating config: TargetNames=file, console, ConfigItems=22, FilePath=E:\GreetingCLone\GreetingApp_-2115500120-\HelloGreetingApplication\bin\Debug\net6.0\nlog.config
+2025-03-20 22:09:58.3906 Info Shutdown() called. Logger closing...
+2025-03-20 22:09:58.3906 Info Closing old configuration.
+2025-03-20 22:09:58.3906 Info Logger has been closed down.
+2025-03-20 22:52:33.7183 Info Registered target NLog.Targets.FileTarget(Name=file)
+2025-03-20 22:52:33.7365 Info Registered target NLog.Targets.ConsoleTarget(Name=console)
+2025-03-20 22:52:33.7722 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.4.0.3182. Product version: 5.4.0+4d45d445601312040107cbe2ac00e56c4bf4a60b. GlobalAssemblyCache: False
+2025-03-20 22:52:33.8257 Info Validating config: TargetNames=file, console, ConfigItems=22, FilePath=E:\GreetingCLone\GreetingApp_-2115500120-\HelloGreetingApplication\bin\Debug\net6.0\nlog.config
+2025-03-20 22:52:33.8393 Info Configuration initialized.
+2025-03-20 22:56:26.6511 Info Registered target NLog.Targets.FileTarget(Name=file)
+2025-03-20 22:56:26.6511 Info Registered target NLog.Targets.ConsoleTarget(Name=console)
+2025-03-20 22:56:26.6511 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.4.0.3182. Product version: 5.4.0+4d45d445601312040107cbe2ac00e56c4bf4a60b. GlobalAssemblyCache: False
+2025-03-20 22:56:26.6753 Info Validating config: TargetNames=file, console, ConfigItems=22, FilePath=E:\GreetingCLone\GreetingApp_-2115500120-\HelloGreetingApplication\bin\Debug\net6.0\nlog.config
+2025-03-20 22:56:26.6851 Info Configuration initialized.
+2025-03-20 22:56:27.5651 Info Validating config: TargetNames=file, console, ConfigItems=22, FilePath=E:\GreetingCLone\GreetingApp_-2115500120-\HelloGreetingApplication\bin\Debug\net6.0\nlog.config
+2025-03-20 22:56:27.9548 Info Shutdown() called. Logger closing...
+2025-03-20 22:56:27.9548 Info Closing old configuration.
+2025-03-20 22:56:27.9656 Info Logger has been closed down.
+2025-03-20 22:57:24.3263 Info Registered target NLog.Targets.FileTarget(Name=file)
+2025-03-20 22:57:24.3477 Info Registered target NLog.Targets.ConsoleTarget(Name=console)
+2025-03-20 22:57:24.3551 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.4.0.3182. Product version: 5.4.0+4d45d445601312040107cbe2ac00e56c4bf4a60b. GlobalAssemblyCache: False
+2025-03-20 22:57:24.3752 Info Validating config: TargetNames=file, console, ConfigItems=22, FilePath=E:\GreetingCLone\GreetingApp_-2115500120-\HelloGreetingApplication\bin\Debug\net6.0\nlog.config
+2025-03-20 22:57:24.3857 Info Configuration initialized.
+2025-03-20 22:57:24.7149 Info Validating config: TargetNames=file, console, ConfigItems=22, FilePath=E:\GreetingCLone\GreetingApp_-2115500120-\HelloGreetingApplication\bin\Debug\net6.0\nlog.config
+2025-03-20 22:57:24.7707 Info Shutdown() called. Logger closing...
+2025-03-20 22:57:24.7707 Info Closing old configuration.
+2025-03-20 22:57:24.7806 Info Logger has been closed down.
+2025-03-20 22:58:50.2796 Info Registered target NLog.Targets.FileTarget(Name=file)
+2025-03-20 22:58:50.2796 Info Registered target NLog.Targets.ConsoleTarget(Name=console)
+2025-03-20 22:58:50.2796 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.4.0.3182. Product version: 5.4.0+4d45d445601312040107cbe2ac00e56c4bf4a60b. GlobalAssemblyCache: False
+2025-03-20 22:58:50.3030 Info Validating config: TargetNames=file, console, ConfigItems=22, FilePath=E:\GreetingCLone\GreetingApp_-2115500120-\HelloGreetingApplication\bin\Debug\net6.0\nlog.config
+2025-03-20 22:58:50.3130 Info Configuration initialized.
+2025-03-20 22:58:50.5539 Info Validating config: TargetNames=file, console, ConfigItems=22, FilePath=E:\GreetingCLone\GreetingApp_-2115500120-\HelloGreetingApplication\bin\Debug\net6.0\nlog.config
+2025-03-20 22:58:50.5743 Info Shutdown() called. Logger closing...
+2025-03-20 22:58:50.5743 Info Closing old configuration.
+2025-03-20 22:58:50.5879 Info Logger has been closed down.
+2025-03-20 22:59:00.0792 Info Registered target NLog.Targets.FileTarget(Name=file)
+2025-03-20 22:59:00.0792 Info Registered target NLog.Targets.ConsoleTarget(Name=console)
+2025-03-20 22:59:00.0942 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.4.0.3182. Product version: 5.4.0+4d45d445601312040107cbe2ac00e56c4bf4a60b. GlobalAssemblyCache: False
+2025-03-20 22:59:00.1123 Info Validating config: TargetNames=file, console, ConfigItems=22, FilePath=E:\GreetingCLone\GreetingApp_-2115500120-\HelloGreetingApplication\bin\Debug\net6.0\nlog.config
+2025-03-20 22:59:00.1218 Info Configuration initialized.
+2025-03-20 22:59:00.3382 Info Validating config: TargetNames=file, console, ConfigItems=22, FilePath=E:\GreetingCLone\GreetingApp_-2115500120-\HelloGreetingApplication\bin\Debug\net6.0\nlog.config
+2025-03-20 22:59:00.3674 Info Shutdown() called. Logger closing...
+2025-03-20 22:59:00.3674 Info Closing old configuration.
+2025-03-20 22:59:00.3787 Info Logger has been closed down.
+2025-03-20 22:59:47.0364 Info Registered target NLog.Targets.FileTarget(Name=file)
+2025-03-20 22:59:47.0364 Info Registered target NLog.Targets.ConsoleTarget(Name=console)
+2025-03-20 22:59:47.0489 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.4.0.3182. Product version: 5.4.0+4d45d445601312040107cbe2ac00e56c4bf4a60b. GlobalAssemblyCache: False
+2025-03-20 22:59:47.0606 Info Validating config: TargetNames=file, console, ConfigItems=22, FilePath=E:\GreetingCLone\GreetingApp_-2115500120-\HelloGreetingApplication\bin\Debug\net6.0\nlog.config
+2025-03-20 22:59:47.0606 Info Configuration initialized.
+2025-03-20 22:59:47.2904 Info Validating config: TargetNames=file, console, ConfigItems=22, FilePath=E:\GreetingCLone\GreetingApp_-2115500120-\HelloGreetingApplication\bin\Debug\net6.0\nlog.config
+2025-03-20 22:59:47.3105 Info Shutdown() called. Logger closing...
+2025-03-20 22:59:47.3105 Info Closing old configuration.
+2025-03-20 22:59:47.3105 Info Logger has been closed down.
+2025-03-20 23:01:23.1351 Info Registered target NLog.Targets.FileTarget(Name=file)
+2025-03-20 23:01:23.1351 Info Registered target NLog.Targets.ConsoleTarget(Name=console)
+2025-03-20 23:01:23.1351 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.4.0.3182. Product version: 5.4.0+4d45d445601312040107cbe2ac00e56c4bf4a60b. GlobalAssemblyCache: False
+2025-03-20 23:01:23.1589 Info Validating config: TargetNames=file, console, ConfigItems=22, FilePath=E:\GreetingCLone\GreetingApp_-2115500120-\HelloGreetingApplication\bin\Debug\net6.0\nlog.config
+2025-03-20 23:01:23.1684 Info Configuration initialized.
+2025-03-20 23:01:23.3874 Info Validating config: TargetNames=file, console, ConfigItems=22, FilePath=E:\GreetingCLone\GreetingApp_-2115500120-\HelloGreetingApplication\bin\Debug\net6.0\nlog.config
+2025-03-20 23:01:23.4114 Info Shutdown() called. Logger closing...
+2025-03-20 23:01:23.4114 Info Closing old configuration.
+2025-03-20 23:01:23.4231 Info Logger has been closed down.
+2025-03-20 23:03:23.8605 Info Registered target NLog.Targets.FileTarget(Name=file)
+2025-03-20 23:03:23.8605 Info Registered target NLog.Targets.ConsoleTarget(Name=console)
+2025-03-20 23:03:23.8605 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.4.0.3182. Product version: 5.4.0+4d45d445601312040107cbe2ac00e56c4bf4a60b. GlobalAssemblyCache: False
+2025-03-20 23:03:23.8830 Info Validating config: TargetNames=file, console, ConfigItems=22, FilePath=E:\GreetingCLone\GreetingApp_-2115500120-\HelloGreetingApplication\bin\Debug\net6.0\nlog.config
+2025-03-20 23:03:23.8931 Info Configuration initialized.
+2025-03-20 23:03:24.1215 Info Validating config: TargetNames=file, console, ConfigItems=22, FilePath=E:\GreetingCLone\GreetingApp_-2115500120-\HelloGreetingApplication\bin\Debug\net6.0\nlog.config
+2025-03-20 23:03:24.1393 Info Shutdown() called. Logger closing...
+2025-03-20 23:03:24.1393 Info Closing old configuration.
+2025-03-20 23:03:24.1393 Info Logger has been closed down.
+2025-03-20 23:03:27.2692 Info Registered target NLog.Targets.FileTarget(Name=file)
+2025-03-20 23:03:27.2692 Info Registered target NLog.Targets.ConsoleTarget(Name=console)
+2025-03-20 23:03:27.2801 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.4.0.3182. Product version: 5.4.0+4d45d445601312040107cbe2ac00e56c4bf4a60b. GlobalAssemblyCache: False
+2025-03-20 23:03:27.2921 Info Validating config: TargetNames=file, console, ConfigItems=22, FilePath=E:\GreetingCLone\GreetingApp_-2115500120-\HelloGreetingApplication\bin\Debug\net6.0\nlog.config
+2025-03-20 23:03:27.2921 Info Configuration initialized.
+2025-03-20 23:03:27.5156 Info Validating config: TargetNames=file, console, ConfigItems=22, FilePath=E:\GreetingCLone\GreetingApp_-2115500120-\HelloGreetingApplication\bin\Debug\net6.0\nlog.config
+2025-03-20 23:03:27.5397 Info Shutdown() called. Logger closing...
+2025-03-20 23:03:27.5397 Info Closing old configuration.
+2025-03-20 23:03:27.5494 Info Logger has been closed down.
+2025-03-20 23:04:15.3331 Info Registered target NLog.Targets.FileTarget(Name=file)
+2025-03-20 23:04:15.3331 Info Registered target NLog.Targets.ConsoleTarget(Name=console)
+2025-03-20 23:04:15.3430 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.4.0.3182. Product version: 5.4.0+4d45d445601312040107cbe2ac00e56c4bf4a60b. GlobalAssemblyCache: False
+2025-03-20 23:04:15.3551 Info Validating config: TargetNames=file, console, ConfigItems=22, FilePath=E:\GreetingCLone\GreetingApp_-2115500120-\HelloGreetingApplication\bin\Debug\net6.0\nlog.config
+2025-03-20 23:04:15.3551 Info Configuration initialized.
+2025-03-20 23:04:15.5915 Info Validating config: TargetNames=file, console, ConfigItems=22, FilePath=E:\GreetingCLone\GreetingApp_-2115500120-\HelloGreetingApplication\bin\Debug\net6.0\nlog.config
+2025-03-20 23:04:15.6163 Info Shutdown() called. Logger closing...
+2025-03-20 23:04:15.6163 Info Closing old configuration.
+2025-03-20 23:04:15.6272 Info Logger has been closed down.
+2025-03-20 23:04:22.0405 Info Registered target NLog.Targets.FileTarget(Name=file)
+2025-03-20 23:04:22.0427 Info Registered target NLog.Targets.ConsoleTarget(Name=console)
+2025-03-20 23:04:22.0427 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.4.0.3182. Product version: 5.4.0+4d45d445601312040107cbe2ac00e56c4bf4a60b. GlobalAssemblyCache: False
+2025-03-20 23:04:22.0686 Info Validating config: TargetNames=file, console, ConfigItems=22, FilePath=E:\GreetingCLone\GreetingApp_-2115500120-\HelloGreetingApplication\bin\Debug\net6.0\nlog.config
+2025-03-20 23:04:22.0887 Info Configuration initialized.
+2025-03-20 23:04:22.3148 Info Validating config: TargetNames=file, console, ConfigItems=22, FilePath=E:\GreetingCLone\GreetingApp_-2115500120-\HelloGreetingApplication\bin\Debug\net6.0\nlog.config
+2025-03-20 23:04:22.3351 Info Shutdown() called. Logger closing...
+2025-03-20 23:04:22.3351 Info Closing old configuration.
+2025-03-20 23:04:22.3469 Info Logger has been closed down.
+2025-03-20 23:04:30.1376 Info Registered target NLog.Targets.FileTarget(Name=file)
+2025-03-20 23:04:30.1376 Info Registered target NLog.Targets.ConsoleTarget(Name=console)
+2025-03-20 23:04:30.1376 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.4.0.3182. Product version: 5.4.0+4d45d445601312040107cbe2ac00e56c4bf4a60b. GlobalAssemblyCache: False
+2025-03-20 23:04:30.1627 Info Validating config: TargetNames=file, console, ConfigItems=22, FilePath=E:\GreetingCLone\GreetingApp_-2115500120-\HelloGreetingApplication\bin\Debug\net6.0\nlog.config
+2025-03-20 23:04:30.1755 Info Configuration initialized.
+2025-03-20 23:04:30.3992 Info Validating config: TargetNames=file, console, ConfigItems=22, FilePath=E:\GreetingCLone\GreetingApp_-2115500120-\HelloGreetingApplication\bin\Debug\net6.0\nlog.config
+2025-03-20 23:04:30.4287 Info Shutdown() called. Logger closing...
+2025-03-20 23:04:30.4287 Info Closing old configuration.
+2025-03-20 23:04:30.4390 Info Logger has been closed down.
+2025-03-20 23:52:02.9249 Info Registered target NLog.Targets.FileTarget(Name=file)
+2025-03-20 23:52:02.9673 Info Registered target NLog.Targets.ConsoleTarget(Name=console)
+2025-03-20 23:52:02.9673 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.4.0.3182. Product version: 5.4.0+4d45d445601312040107cbe2ac00e56c4bf4a60b. GlobalAssemblyCache: False
+2025-03-20 23:52:03.0353 Info Validating config: TargetNames=file, console, ConfigItems=22, FilePath=E:\GreetingCLone\GreetingApp_-2115500120-\HelloGreetingApplication\bin\Debug\net6.0\nlog.config
+2025-03-20 23:52:03.0449 Info Configuration initialized.
+2025-03-20 23:52:03.6948 Info Validating config: TargetNames=file, console, ConfigItems=22, FilePath=E:\GreetingCLone\GreetingApp_-2115500120-\HelloGreetingApplication\bin\Debug\net6.0\nlog.config
+2025-03-20 23:52:03.9301 Info Shutdown() called. Logger closing...
+2025-03-20 23:52:03.9301 Info Closing old configuration.
+2025-03-20 23:52:03.9413 Info Logger has been closed down.
+2025-03-21 00:03:30.6289 Info Registered target NLog.Targets.FileTarget(Name=file)
+2025-03-21 00:03:30.7318 Info Registered target NLog.Targets.ConsoleTarget(Name=console)
+2025-03-21 00:03:30.7738 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.4.0.3182. Product version: 5.4.0+4d45d445601312040107cbe2ac00e56c4bf4a60b. GlobalAssemblyCache: False
+2025-03-21 00:03:30.8100 Info Validating config: TargetNames=file, console, ConfigItems=22, FilePath=E:\GreetingCLone\GreetingApp_-2115500120-\HelloGreetingApplication\bin\Debug\net6.0\nlog.config
+2025-03-21 00:03:30.8198 Info Configuration initialized.
+2025-03-21 00:03:31.1735 Info Validating config: TargetNames=file, console, ConfigItems=22, FilePath=E:\GreetingCLone\GreetingApp_-2115500120-\HelloGreetingApplication\bin\Debug\net6.0\nlog.config
+2025-03-21 00:03:31.3127 Info Shutdown() called. Logger closing...
+2025-03-21 00:03:31.3127 Info Closing old configuration.
+2025-03-21 00:03:31.3273 Info Logger has been closed down.
+2025-03-21 00:04:04.7097 Info Registered target NLog.Targets.FileTarget(Name=file)
+2025-03-21 00:04:04.7097 Info Registered target NLog.Targets.ConsoleTarget(Name=console)
+2025-03-21 00:04:04.7276 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.4.0.3182. Product version: 5.4.0+4d45d445601312040107cbe2ac00e56c4bf4a60b. GlobalAssemblyCache: False
+2025-03-21 00:04:04.7536 Info Validating config: TargetNames=file, console, ConfigItems=22, FilePath=E:\GreetingCLone\GreetingApp_-2115500120-\HelloGreetingApplication\bin\Debug\net6.0\nlog.config
+2025-03-21 00:04:04.7739 Info Configuration initialized.
+2025-03-21 00:04:05.6359 Info Validating config: TargetNames=file, console, ConfigItems=22, FilePath=E:\GreetingCLone\GreetingApp_-2115500120-\HelloGreetingApplication\bin\Debug\net6.0\nlog.config
+2025-03-21 00:06:30.7158 Info Registered target NLog.Targets.FileTarget(Name=file)
+2025-03-21 00:06:30.7347 Info Registered target NLog.Targets.ConsoleTarget(Name=console)
+2025-03-21 00:06:30.7900 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.4.0.3182. Product version: 5.4.0+4d45d445601312040107cbe2ac00e56c4bf4a60b. GlobalAssemblyCache: False
+2025-03-21 00:06:30.8404 Info Validating config: TargetNames=file, console, ConfigItems=22, FilePath=E:\GreetingCLone\GreetingApp_-2115500120-\HelloGreetingApplication\bin\Debug\net6.0\nlog.config
+2025-03-21 00:06:30.8682 Info Configuration initialized.
+2025-03-21 00:06:31.2532 Info Validating config: TargetNames=file, console, ConfigItems=22, FilePath=E:\GreetingCLone\GreetingApp_-2115500120-\HelloGreetingApplication\bin\Debug\net6.0\nlog.config

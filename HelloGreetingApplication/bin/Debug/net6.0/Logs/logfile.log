@@ -1094,3 +1094,168 @@ SELECT @@ROWCOUNT;
 2025-03-20 11:59:02.6262 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request starting HTTP/2 GET https://localhost:7193/swagger/favicon-32x32.png - - 
 2025-03-20 11:59:02.6262 | INFO | Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware | Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A' 
 2025-03-20 11:59:02.6262 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request finished HTTP/2 GET https://localhost:7193/swagger/favicon-32x32.png - - - 200 628 image/png 2.0556ms 
+2025-03-20 22:06:44.0665 | INFO | HelloGreetingApplication.Program | Application Starting... 
+2025-03-20 22:06:45.9884 | INFO | Microsoft.Hosting.Lifetime | Now listening on: https://localhost:7193 
+2025-03-20 22:06:45.9884 | INFO | Microsoft.Hosting.Lifetime | Now listening on: http://localhost:5161 
+2025-03-20 22:06:46.0367 | INFO | Microsoft.Hosting.Lifetime | Application started. Press Ctrl+C to shut down. 
+2025-03-20 22:06:46.0367 | INFO | Microsoft.Hosting.Lifetime | Hosting environment: Development 
+2025-03-20 22:06:46.0367 | INFO | Microsoft.Hosting.Lifetime | Content root path: E:\GreetingCLone\GreetingApp_-2115500120-\HelloGreetingApplication\ 
+2025-03-20 22:06:47.0958 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request starting HTTP/2 GET https://localhost:7193/swagger/index.html - - 
+2025-03-20 22:06:47.4655 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request finished HTTP/2 GET https://localhost:7193/swagger/index.html - - - 200 - text/html;charset=utf-8 373.6516ms 
+2025-03-20 22:06:47.5287 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request starting HTTP/2 GET https://localhost:7193/swagger/index.js - - 
+2025-03-20 22:06:47.5287 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request starting HTTP/2 GET https://localhost:7193/_framework/aspnetcore-browser-refresh.js - - 
+2025-03-20 22:06:47.5299 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request finished HTTP/2 GET https://localhost:7193/swagger/index.js - - - 200 - application/javascript;charset=utf-8 3.6723ms 
+2025-03-20 22:06:47.5299 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request finished HTTP/2 GET https://localhost:7193/_framework/aspnetcore-browser-refresh.js - - - 200 12380 application/javascript;+charset=utf-8 9.8006ms 
+2025-03-20 22:06:47.7897 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request starting HTTP/2 GET https://localhost:7193/_vs/browserLink - - 
+2025-03-20 22:06:47.8608 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request finished HTTP/2 GET https://localhost:7193/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 71.2025ms 
+2025-03-20 22:06:48.8394 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request starting HTTP/2 GET https://localhost:7193/swagger/v1/swagger.json - - 
+2025-03-20 22:06:48.8493 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request finished HTTP/2 GET https://localhost:7193/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 9.8828ms 
+2025-03-20 22:07:46.8503 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request starting HTTP/2 POST https://localhost:7193/auth/register application/json 106 
+2025-03-20 22:07:46.8587 | INFO | Microsoft.AspNetCore.Routing.EndpointMiddleware | Executing endpoint 'HelloGreetingApplication.Controllers.UserController.Register (HelloGreetingApplication)' 
+2025-03-20 22:07:46.8921 | INFO | Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker | Route matched with {action = "Register", controller = "User"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Register(ModelLayer.DTO.RegisterDTO) on controller HelloGreetingApplication.Controllers.UserController (HelloGreetingApplication). 
+2025-03-20 22:07:48.1735 | INFO | HelloGreetingApplication.Controllers.UserController | Starting the registeration 
+2025-03-20 22:07:48.1857 | INFO | BusinessLayer.Services.UserBL | User Details in Business Layer 
+2025-03-20 22:07:48.1857 | INFO | RepositoryLayer.Services.UserRL | checking if user exist or not 
+2025-03-20 22:07:48.9525 | INFO | Microsoft.EntityFrameworkCore.Infrastructure | Entity Framework Core 6.0.36 initialized 'HelloGreetingDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.36' with options: None 
+2025-03-20 22:07:50.7711 | ERROR | Microsoft.EntityFrameworkCore.Database.Command | Failed executing DbCommand (78ms) [Parameters=[@__userRegisterDTO_Email_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[UserId], [u].[Email], [u].[FirstName], [u].[LastName], [u].[PasswordHash]
+FROM [Users] AS [u]
+WHERE [u].[Email] = @__userRegisterDTO_Email_0 
+2025-03-20 22:07:50.8368 | ERROR | Microsoft.EntityFrameworkCore.Query | An exception occurred while iterating over the results of a query for context type 'HelloGreetingDbContext'.
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid object name 'Users'.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at Microsoft.Data.SqlClient.SqlDataReader.get_MetaData()
+   at Microsoft.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean isAsync, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.InitializeReader(Enumerator enumerator)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.MoveNext()
+ClientConnectionId:0e284d7c-f8a0-4f1a-98f4-37373d378443
+Error Number:208,State:1,Class:16 Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid object name 'Users'.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at Microsoft.Data.SqlClient.SqlDataReader.get_MetaData()
+   at Microsoft.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean isAsync, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.InitializeReader(Enumerator enumerator)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.MoveNext()
+ClientConnectionId:0e284d7c-f8a0-4f1a-98f4-37373d378443
+Error Number:208,State:1,Class:16
+2025-03-20 22:09:57.6965 | INFO | HelloGreetingApplication.Program | Application Starting... 
+2025-03-20 22:09:58.3266 | ERROR | HelloGreetingApplication.Program | Application stopped due to an exception. Microsoft.Extensions.Hosting.HostFactoryResolver+HostingListener+StopTheHostException: Exception of type 'Microsoft.Extensions.Hosting.HostFactoryResolver+HostingListener+StopTheHostException' was thrown.
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.OnNext(KeyValuePair`2 value)
+   at System.Diagnostics.DiagnosticListener.Write(String name, Object value)
+   at Microsoft.Extensions.Hosting.HostBuilder.Build()
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
+   at Program.<Main>$(String[] args) in E:\GreetingCLone\GreetingApp_-2115500120-\HelloGreetingApplication\Program.cs:line 47
+2025-03-20 22:52:33.8601 | INFO | HelloGreetingApplication.Program | Application Starting... 
+2025-03-20 22:56:26.6979 | INFO | HelloGreetingApplication.Program | Application Starting... 
+2025-03-20 22:56:27.5723 | ERROR | HelloGreetingApplication.Program | Application stopped due to an exception. Microsoft.Extensions.Hosting.HostFactoryResolver+HostingListener+StopTheHostException: Exception of type 'Microsoft.Extensions.Hosting.HostFactoryResolver+HostingListener+StopTheHostException' was thrown.
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.OnNext(KeyValuePair`2 value)
+   at System.Diagnostics.DiagnosticListener.Write(String name, Object value)
+   at Microsoft.Extensions.Hosting.HostBuilder.Build()
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
+   at Program.<Main>$(String[] args) in E:\GreetingCLone\GreetingApp_-2115500120-\HelloGreetingApplication\Program.cs:line 47
+2025-03-20 22:57:24.3857 | INFO | HelloGreetingApplication.Program | Application Starting... 
+2025-03-20 22:57:24.7149 | ERROR | HelloGreetingApplication.Program | Application stopped due to an exception. Microsoft.Extensions.Hosting.HostFactoryResolver+HostingListener+StopTheHostException: Exception of type 'Microsoft.Extensions.Hosting.HostFactoryResolver+HostingListener+StopTheHostException' was thrown.
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.OnNext(KeyValuePair`2 value)
+   at System.Diagnostics.DiagnosticListener.Write(String name, Object value)
+   at Microsoft.Extensions.Hosting.HostBuilder.Build()
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
+   at Program.<Main>$(String[] args) in E:\GreetingCLone\GreetingApp_-2115500120-\HelloGreetingApplication\Program.cs:line 47
+2025-03-20 22:58:50.3130 | INFO | HelloGreetingApplication.Program | Application Starting... 
+2025-03-20 22:58:50.5609 | ERROR | HelloGreetingApplication.Program | Application stopped due to an exception. Microsoft.Extensions.Hosting.HostFactoryResolver+HostingListener+StopTheHostException: Exception of type 'Microsoft.Extensions.Hosting.HostFactoryResolver+HostingListener+StopTheHostException' was thrown.
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.OnNext(KeyValuePair`2 value)
+   at System.Diagnostics.DiagnosticListener.Write(String name, Object value)
+   at Microsoft.Extensions.Hosting.HostBuilder.Build()
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
+   at Program.<Main>$(String[] args) in E:\GreetingCLone\GreetingApp_-2115500120-\HelloGreetingApplication\Program.cs:line 47
+2025-03-20 22:59:00.1218 | INFO | HelloGreetingApplication.Program | Application Starting... 
+2025-03-20 22:59:00.3382 | ERROR | HelloGreetingApplication.Program | Application stopped due to an exception. Microsoft.Extensions.Hosting.HostFactoryResolver+HostingListener+StopTheHostException: Exception of type 'Microsoft.Extensions.Hosting.HostFactoryResolver+HostingListener+StopTheHostException' was thrown.
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.OnNext(KeyValuePair`2 value)
+   at System.Diagnostics.DiagnosticListener.Write(String name, Object value)
+   at Microsoft.Extensions.Hosting.HostBuilder.Build()
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
+   at Program.<Main>$(String[] args) in E:\GreetingCLone\GreetingApp_-2115500120-\HelloGreetingApplication\Program.cs:line 47
+2025-03-20 22:59:47.0776 | INFO | HelloGreetingApplication.Program | Application Starting... 
+2025-03-20 22:59:47.2973 | ERROR | HelloGreetingApplication.Program | Application stopped due to an exception. Microsoft.Extensions.Hosting.HostFactoryResolver+HostingListener+StopTheHostException: Exception of type 'Microsoft.Extensions.Hosting.HostFactoryResolver+HostingListener+StopTheHostException' was thrown.
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.OnNext(KeyValuePair`2 value)
+   at System.Diagnostics.DiagnosticListener.Write(String name, Object value)
+   at Microsoft.Extensions.Hosting.HostBuilder.Build()
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
+   at Program.<Main>$(String[] args) in E:\GreetingCLone\GreetingApp_-2115500120-\HelloGreetingApplication\Program.cs:line 47
+2025-03-20 23:01:23.1684 | INFO | HelloGreetingApplication.Program | Application Starting... 
+2025-03-20 23:01:23.3874 | ERROR | HelloGreetingApplication.Program | Application stopped due to an exception. Microsoft.Extensions.Hosting.HostFactoryResolver+HostingListener+StopTheHostException: Exception of type 'Microsoft.Extensions.Hosting.HostFactoryResolver+HostingListener+StopTheHostException' was thrown.
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.OnNext(KeyValuePair`2 value)
+   at System.Diagnostics.DiagnosticListener.Write(String name, Object value)
+   at Microsoft.Extensions.Hosting.HostBuilder.Build()
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
+   at Program.<Main>$(String[] args) in E:\GreetingCLone\GreetingApp_-2115500120-\HelloGreetingApplication\Program.cs:line 47
+2025-03-20 23:03:23.8931 | INFO | HelloGreetingApplication.Program | Application Starting... 
+2025-03-20 23:03:24.1215 | ERROR | HelloGreetingApplication.Program | Application stopped due to an exception. Microsoft.Extensions.Hosting.HostFactoryResolver+HostingListener+StopTheHostException: Exception of type 'Microsoft.Extensions.Hosting.HostFactoryResolver+HostingListener+StopTheHostException' was thrown.
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.OnNext(KeyValuePair`2 value)
+   at System.Diagnostics.DiagnosticListener.Write(String name, Object value)
+   at Microsoft.Extensions.Hosting.HostBuilder.Build()
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
+   at Program.<Main>$(String[] args) in E:\GreetingCLone\GreetingApp_-2115500120-\HelloGreetingApplication\Program.cs:line 47
+2025-03-20 23:03:27.3100 | INFO | HelloGreetingApplication.Program | Application Starting... 
+2025-03-20 23:03:27.5156 | ERROR | HelloGreetingApplication.Program | Application stopped due to an exception. Microsoft.Extensions.Hosting.HostFactoryResolver+HostingListener+StopTheHostException: Exception of type 'Microsoft.Extensions.Hosting.HostFactoryResolver+HostingListener+StopTheHostException' was thrown.
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.OnNext(KeyValuePair`2 value)
+   at System.Diagnostics.DiagnosticListener.Write(String name, Object value)
+   at Microsoft.Extensions.Hosting.HostBuilder.Build()
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
+   at Program.<Main>$(String[] args) in E:\GreetingCLone\GreetingApp_-2115500120-\HelloGreetingApplication\Program.cs:line 47
+2025-03-20 23:04:15.3732 | INFO | HelloGreetingApplication.Program | Application Starting... 
+2025-03-20 23:04:15.5915 | ERROR | HelloGreetingApplication.Program | Application stopped due to an exception. Microsoft.Extensions.Hosting.HostFactoryResolver+HostingListener+StopTheHostException: Exception of type 'Microsoft.Extensions.Hosting.HostFactoryResolver+HostingListener+StopTheHostException' was thrown.
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.OnNext(KeyValuePair`2 value)
+   at System.Diagnostics.DiagnosticListener.Write(String name, Object value)
+   at Microsoft.Extensions.Hosting.HostBuilder.Build()
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
+   at Program.<Main>$(String[] args) in E:\GreetingCLone\GreetingApp_-2115500120-\HelloGreetingApplication\Program.cs:line 47
+2025-03-20 23:04:22.0887 | INFO | HelloGreetingApplication.Program | Application Starting... 
+2025-03-20 23:04:22.3148 | ERROR | HelloGreetingApplication.Program | Application stopped due to an exception. Microsoft.Extensions.Hosting.HostFactoryResolver+HostingListener+StopTheHostException: Exception of type 'Microsoft.Extensions.Hosting.HostFactoryResolver+HostingListener+StopTheHostException' was thrown.
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.OnNext(KeyValuePair`2 value)
+   at System.Diagnostics.DiagnosticListener.Write(String name, Object value)
+   at Microsoft.Extensions.Hosting.HostBuilder.Build()
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
+   at Program.<Main>$(String[] args) in E:\GreetingCLone\GreetingApp_-2115500120-\HelloGreetingApplication\Program.cs:line 47
+2025-03-20 23:04:30.1829 | INFO | HelloGreetingApplication.Program | Application Starting... 
+2025-03-20 23:04:30.4054 | ERROR | HelloGreetingApplication.Program | Application stopped due to an exception. Microsoft.Extensions.Hosting.HostFactoryResolver+HostingListener+StopTheHostException: Exception of type 'Microsoft.Extensions.Hosting.HostFactoryResolver+HostingListener+StopTheHostException' was thrown.
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.OnNext(KeyValuePair`2 value)
+   at System.Diagnostics.DiagnosticListener.Write(String name, Object value)
+   at Microsoft.Extensions.Hosting.HostBuilder.Build()
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
+   at Program.<Main>$(String[] args) in E:\GreetingCLone\GreetingApp_-2115500120-\HelloGreetingApplication\Program.cs:line 47
+2025-03-20 23:52:03.0582 | INFO | HelloGreetingApplication.Program | Application Starting... 
+2025-03-20 23:52:03.7061 | ERROR | HelloGreetingApplication.Program | Application stopped due to an exception. Microsoft.Extensions.Hosting.HostFactoryResolver+HostingListener+StopTheHostException: Exception of type 'Microsoft.Extensions.Hosting.HostFactoryResolver+HostingListener+StopTheHostException' was thrown.
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.OnNext(KeyValuePair`2 value)
+   at System.Diagnostics.DiagnosticListener.Write(String name, Object value)
+   at Microsoft.Extensions.Hosting.HostBuilder.Build()
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
+   at Program.<Main>$(String[] args) in E:\GreetingCLone\GreetingApp_-2115500120-\HelloGreetingApplication\Program.cs:line 47
+2025-03-21 00:03:30.8348 | INFO | HelloGreetingApplication.Program | Application Starting... 
+2025-03-21 00:03:31.1823 | ERROR | HelloGreetingApplication.Program | Application stopped due to an exception. Microsoft.Extensions.Hosting.HostFactoryResolver+HostingListener+StopTheHostException: Exception of type 'Microsoft.Extensions.Hosting.HostFactoryResolver+HostingListener+StopTheHostException' was thrown.
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.OnNext(KeyValuePair`2 value)
+   at System.Diagnostics.DiagnosticListener.Write(String name, Object value)
+   at Microsoft.Extensions.Hosting.HostBuilder.Build()
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
+   at Program.<Main>$(String[] args) in E:\GreetingCLone\GreetingApp_-2115500120-\HelloGreetingApplication\Program.cs:line 47
+2025-03-21 00:04:04.7944 | INFO | HelloGreetingApplication.Program | Application Starting... 
+2025-03-21 00:04:05.6752 | ERROR | HelloGreetingApplication.Program | Application stopped due to an exception. System.InvalidOperationException: Cannot modify ServiceCollection after application is built.
+   at Microsoft.AspNetCore.WebApplicationServiceCollection.CheckServicesAccess()
+   at Microsoft.AspNetCore.WebApplicationServiceCollection.Add(ServiceDescriptor item)
+   at Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton(IServiceCollection services, Type serviceType, Func`2 implementationFactory)
+   at Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton[TService](IServiceCollection services, Func`2 implementationFactory)
+   at Program.<Main>$(String[] args) in E:\GreetingCLone\GreetingApp_-2115500120-\HelloGreetingApplication\Program.cs:line 49

@@ -82,6 +82,8 @@ E:\GreetingCLone\GreetingApp_-2115500120-\HelloGreetingApplication\bin\Debug\net
 E:\GreetingCLone\GreetingApp_-2115500120-\HelloGreetingApplication\bin\Debug\net6.0\NLog.Extensions.Logging.dll
 E:\GreetingCLone\GreetingApp_-2115500120-\HelloGreetingApplication\bin\Debug\net6.0\NLog.Web.dll
 E:\GreetingCLone\GreetingApp_-2115500120-\HelloGreetingApplication\bin\Debug\net6.0\NLog.Web.AspNetCore.dll
+E:\GreetingCLone\GreetingApp_-2115500120-\HelloGreetingApplication\bin\Debug\net6.0\Pipelines.Sockets.Unofficial.dll
+E:\GreetingCLone\GreetingApp_-2115500120-\HelloGreetingApplication\bin\Debug\net6.0\StackExchange.Redis.dll
 E:\GreetingCLone\GreetingApp_-2115500120-\HelloGreetingApplication\bin\Debug\net6.0\Swashbuckle.AspNetCore.Swagger.dll
 E:\GreetingCLone\GreetingApp_-2115500120-\HelloGreetingApplication\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 E:\GreetingCLone\GreetingApp_-2115500120-\HelloGreetingApplication\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
@@ -137,5 +139,3 @@ E:\GreetingCLone\GreetingApp_-2115500120-\HelloGreetingApplication\obj\Debug\net
 E:\GreetingCLone\GreetingApp_-2115500120-\HelloGreetingApplication\obj\Debug\net6.0\HelloGreetingApplication.pdb
 E:\GreetingCLone\GreetingApp_-2115500120-\HelloGreetingApplication\obj\Debug\net6.0\HelloGreetingApplication.genruntimeconfig.cache
 E:\GreetingCLone\GreetingApp_-2115500120-\HelloGreetingApplication\obj\Debug\net6.0\ref\HelloGreetingApplication.dll
-E:\GreetingCLone\GreetingApp_-2115500120-\HelloGreetingApplication\bin\Debug\net6.0\Pipelines.Sockets.Unofficial.dll
-E:\GreetingCLone\GreetingApp_-2115500120-\HelloGreetingApplication\bin\Debug\net6.0\StackExchange.Redis.dll

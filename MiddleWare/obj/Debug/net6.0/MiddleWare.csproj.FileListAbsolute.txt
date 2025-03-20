@@ -1,6 +1,13 @@
+E:\GreetingCLone\GreetingApp_-2115500120-\MiddleWare\bin\Debug\net6.0\MiddleWare.deps.json
+E:\GreetingCLone\GreetingApp_-2115500120-\MiddleWare\bin\Debug\net6.0\MiddleWare.dll
+E:\GreetingCLone\GreetingApp_-2115500120-\MiddleWare\bin\Debug\net6.0\MiddleWare.pdb
 E:\GreetingCLone\GreetingApp_-2115500120-\MiddleWare\obj\Debug\net6.0\MiddleWare.csproj.AssemblyReference.cache
 E:\GreetingCLone\GreetingApp_-2115500120-\MiddleWare\obj\Debug\net6.0\MiddleWare.GeneratedMSBuildEditorConfig.editorconfig
 E:\GreetingCLone\GreetingApp_-2115500120-\MiddleWare\obj\Debug\net6.0\MiddleWare.AssemblyInfoInputs.cache
 E:\GreetingCLone\GreetingApp_-2115500120-\MiddleWare\obj\Debug\net6.0\MiddleWare.AssemblyInfo.cs
 E:\GreetingCLone\GreetingApp_-2115500120-\MiddleWare\obj\Debug\net6.0\MiddleWare.csproj.CoreCompileInputs.cache
 E:\GreetingCLone\GreetingApp_-2115500120-\MiddleWare\obj\Debug\net6.0\MiddleWare.sourcelink.json
+E:\GreetingCLone\GreetingApp_-2115500120-\MiddleWare\obj\Debug\net6.0\MiddleWare.dll
+E:\GreetingCLone\GreetingApp_-2115500120-\MiddleWare\obj\Debug\net6.0\refint\MiddleWare.dll
+E:\GreetingCLone\GreetingApp_-2115500120-\MiddleWare\obj\Debug\net6.0\MiddleWare.pdb
+E:\GreetingCLone\GreetingApp_-2115500120-\MiddleWare\obj\Debug\net6.0\ref\MiddleWare.dll
