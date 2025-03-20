@@ -1,0 +1,6 @@
+E:\GreetingCLone\GreetingApp_-2115500120-\MiddleWare\obj\Debug\net6.0\MiddleWare.csproj.AssemblyReference.cache
+E:\GreetingCLone\GreetingApp_-2115500120-\MiddleWare\obj\Debug\net6.0\MiddleWare.GeneratedMSBuildEditorConfig.editorconfig
+E:\GreetingCLone\GreetingApp_-2115500120-\MiddleWare\obj\Debug\net6.0\MiddleWare.AssemblyInfoInputs.cache
+E:\GreetingCLone\GreetingApp_-2115500120-\MiddleWare\obj\Debug\net6.0\MiddleWare.AssemblyInfo.cs
+E:\GreetingCLone\GreetingApp_-2115500120-\MiddleWare\obj\Debug\net6.0\MiddleWare.csproj.CoreCompileInputs.cache
+E:\GreetingCLone\GreetingApp_-2115500120-\MiddleWare\obj\Debug\net6.0\MiddleWare.sourcelink.json
