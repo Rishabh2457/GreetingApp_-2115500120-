@@ -8,5 +8,7 @@ namespace BusinessLayer.Interface
     {
         User RegisterUser(RegisterDTO userRegisterDTO);
         UserResponseDTO LoginUser(LoginDTO loginDTO);
+        bool ForgetPassword(string email);
+        bool ResetPassword(string token, string newPassword);
     }
 }

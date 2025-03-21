@@ -1,95 +1,116 @@
-﻿using NLog;
-using NLog.Web;
-using BusinessLayer.Interface;
+﻿using BusinessLayer.Interface;
 using BusinessLayer.Service;
-using RepositoryLayer.Interface;
-using Microsoft.EntityFrameworkCore;
-using ModelLayer.Model;
-using StackExchange.Redis;
 using BusinessLayer.Services;
-using RepositoryLayer.Services;
-using RepositoryLayer.Hashing;
-using System.Text;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
+using Microsoft.OpenApi.Models;
+using NLog.Web;
+using NLog;
+using RepositoryLayer.Hashing;
+using RepositoryLayer.Interface;
+using RepositoryLayer.Services;
+using StackExchange.Redis;
+using System.Text;
 
 var logger = LogManager.Setup().LoadConfigurationFromAppSettings().GetCurrentClassLogger();
 logger.Info("Application Starting...");
 
-try
+var builder = WebApplication.CreateBuilder(args);
+
+// 🔹 Configure NLog
+builder.Logging.ClearProviders();
+builder.Host.UseNLog();
+
+// 🔹 Add Controllers & Swagger
+builder.Services.AddControllers();
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen(options =>
 {
-    var builder = WebApplication.CreateBuilder(args);
-
-    // 🔹 Configure NLog
-    builder.Logging.ClearProviders();
-    builder.Host.UseNLog();
-
-    // 🔹 Add Controllers & Swagger
-    builder.Services.AddControllers();
-    builder.Services.AddEndpointsApiExplorer();
-    builder.Services.AddSwaggerGen();
-
-    // 🔹 Register Repository and Business Layer
-    builder.Services.AddScoped<IGreetingRL, GreetingRL>();
-    builder.Services.AddScoped<IGreetingBL, GreetingBL>();
-    builder.Services.AddScoped<IUserBL, UserBL>();
-    builder.Services.AddScoped<IUserRL, UserRL>();
-    builder.Services.AddScoped<Password_Hash>();
-
-    //  Database connection
-    var connectionString = builder.Configuration.GetConnectionString("SqlConnection");
-    builder.Services.AddDbContext<HelloGreetingDbContext>(options => options.UseSqlServer(connectionString));
-
-    //  Configure Redis
-    builder.Services.AddSingleton<IConnectionMultiplexer>(sp =>
+    options.SwaggerDoc("v1", new OpenApiInfo
     {
-        var redisConfig = builder.Configuration.GetSection("Redis")["ConnectionString"] ?? "localhost:6379";
-        return ConnectionMultiplexer.Connect(redisConfig);
+        Title = "Greetings API",
+        Version = "v1",
+        Description = "An API to manage Greetings"
     });
-    builder.Services.AddSingleton<RedisCacheService>();
-
-    //  Configure JWT Authentication BEFORE app.Build()
-    var jwt = builder.Configuration.GetSection("Jwt");
-    var key = Encoding.UTF8.GetBytes(jwt["SecretKey"]);
-    builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
-        .AddJwtBearer(options =>
-        {
-            options.TokenValidationParameters = new TokenValidationParameters
-            {
-                ValidateIssuer = true,
-                ValidateAudience = true,
-                ValidateLifetime = true,
-                ValidateIssuerSigningKey = true,
-                ValidIssuer = jwt["Issuer"],
-                ValidAudience = jwt["Audience"],
-                IssuerSigningKey = new SymmetricSecurityKey(key)
-            };
-        });
-
-    builder.Services.AddAuthorization();
-
-    //  BUILD NOW
-    var app = builder.Build();
-
-    //  Middleware
-    if (app.Environment.IsDevelopment())
+    options.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
     {
-        app.UseSwagger();
-        app.UseSwaggerUI();
-    }
+        Name = "Authorization",
+        Type = SecuritySchemeType.Http,
+        Scheme = "Bearer",
+        BearerFormat = "JWT",
+        In = ParameterLocation.Header,
+        Description = "Enter your token in the text input below."
+    });
+    options.AddSecurityRequirement(new OpenApiSecurityRequirement
+    {
+        {
+            new OpenApiSecurityScheme
+            {
+                Reference = new OpenApiReference
+                {
+                    Type = ReferenceType.SecurityScheme,
+                    Id = "Bearer"
+                }
+            },
+            new string[] { }
+        }
+    });
+});
 
-    app.UseHttpsRedirection();
-    app.UseAuthentication(); 
-    app.UseAuthorization();
-    app.MapControllers();
-    app.Run();
-}
-catch (Exception ex)
+//  Register Repository and Business Layer
+builder.Services.AddScoped<IGreetingRL, GreetingRL>();
+builder.Services.AddScoped<IGreetingBL, GreetingBL>();
+builder.Services.AddScoped<IUserBL, UserBL>();
+builder.Services.AddScoped<IUserRL, UserRL>();
+builder.Services.AddScoped<Password_Hash>();
+builder.Services.AddScoped<IEmailService, EmailService>();
+
+
+//  Database connection
+var connectionString = builder.Configuration.GetConnectionString("SqlConnection");
+builder.Services.AddDbContext<HelloGreetingDbContext>(options => options.UseSqlServer(connectionString));
+
+//  Configure Redis
+builder.Services.AddSingleton<IConnectionMultiplexer>(sp =>
 {
-    logger.Error(ex, "Application stopped due to an exception.");
-    throw;
-}
-finally
+    var redisConfig = builder.Configuration.GetSection("RedisCacheSettings")["ConnectionString"] ?? "localhost:6379";
+    return ConnectionMultiplexer.Connect(redisConfig);
+});
+builder.Services.AddSingleton<RedisCacheService>();
+
+//  Configure JWT Authentication
+var jwt = builder.Configuration.GetSection("Jwt");
+var key = Encoding.UTF8.GetBytes(jwt["SecretKey"]);
+builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+    .AddJwtBearer(options =>
+    {
+        options.TokenValidationParameters = new TokenValidationParameters
+        {
+            ValidateIssuer = true,
+            ValidateAudience = true,
+            ValidateLifetime = true,
+            ValidateIssuerSigningKey = true,
+            ValidIssuer = jwt["Issuer"],
+            ValidAudience = jwt["Audience"],
+            IssuerSigningKey = new SymmetricSecurityKey(key)
+        };
+    });
+
+builder.Services.AddAuthorization();
+
+// BUILD NOW
+var app = builder.Build();
+
+// Middleware
+if (app.Environment.IsDevelopment())
 {
-    LogManager.Shutdown();
+    app.UseSwagger();
+    app.UseSwaggerUI();
 }
+
+app.UseHttpsRedirection();
+app.UseAuthentication();
+app.UseAuthorization();
+app.MapControllers();
+app.Run();
