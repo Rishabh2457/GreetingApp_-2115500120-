@@ -1,5 +1,6 @@
 using System.Reflection.Metadata.Ecma335;
 using BusinessLayer.Interface;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using ModelLayer.Model;
 using NLog;
@@ -21,11 +22,11 @@ namespace HelloGreetingApplication.Controllers
         private readonly RedisCacheService _cacheService;
 
 
-        public HelloGreetingController(IGreetingBL greetingBL)
+        public HelloGreetingController(IGreetingBL greetingBL, RedisCacheService cacheService)
         {
             _greetingBL = greetingBL;
+            _cacheService = cacheService;
         }
-        
 
 
 
@@ -321,6 +322,7 @@ namespace HelloGreetingApplication.Controllers
         /// Get all greeting messages (Uses caching)
         /// </summary>
         [HttpGet("GetAllGreetings")]
+        [Authorize]
         public async Task<IActionResult> GetAllGreetings()
         {
             string cacheKey = "all_greetings";
