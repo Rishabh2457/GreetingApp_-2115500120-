@@ -8,5 +8,7 @@ namespace RepositoryLayer.Interface
     {
         User RegisterUser(RegisterDTO registerDTO);
         UserResponseDTO LoginUser(LoginDTO loginDTO);
+        bool ResetPassword(string token, string newPassword);
+        bool ForgetPassword(string email);
     }
 }
